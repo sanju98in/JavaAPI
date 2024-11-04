@@ -15,20 +15,21 @@ public class TestOAuth {
             .formParams("grant_type", "client_credentials")
             .formParams("scope", "trust")
         .when().log().all()
-        .post("https://rahulshettyacademy.com/oauthapi/oauth2/resourceOwner/token").asString();
-		System.out.println(response);
-
-		JsonPath jsonPath = new JsonPath(response);
-	    String accessToken = jsonPath.getString("access_token");
-	    System.out.println(accessToken);
+        	.post("https://rahulshettyacademy.com/oauthapi/oauth2/resourceOwner/token").asString();
 		
-	    String r2=    
+			System.out.println(response);
+			JsonPath jsonPath = new JsonPath(response);
+		    String accessToken = jsonPath.getString("access_token");
+		    System.out.println(accessToken);
+		
+		//get the course details
+	    String getCourseDetails=    
 		given()
 			.queryParams("access_token", accessToken)
 		.when()
            .get("https://rahulshettyacademy.com/oauthapi/getCourseDetails")
            .asString();
 	    
-	    System.out.println(r2);
+	    	System.out.println(getCourseDetails);
 		}
 	}
