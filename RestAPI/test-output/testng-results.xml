@@ -1,25 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-02T14:51:03 IST" name="Default suite" finished-at="2024-11-02T14:51:03 IST" duration-ms="630">
+  <suite started-at="2024-11-02T16:25:05 IST" name="Default suite" finished-at="2024-11-02T16:25:10 IST" duration-ms="4516">
     <groups>
     </groups>
-    <test started-at="2024-11-02T14:51:03 IST" name="Default test" finished-at="2024-11-02T14:51:03 IST" duration-ms="630">
-      <class name="SumValidation">
-        <test-method signature="PrintAllCourseTitleAndPrices()[pri:0, instance:SumValidation@11a7ba62]" started-at="2024-11-02T14:51:03 IST" name="PrintAllCourseTitleAndPrices" finished-at="2024-11-02T14:51:03 IST" duration-ms="269" status="PASS">
+    <test started-at="2024-11-02T16:25:05 IST" name="Default test" finished-at="2024-11-02T16:25:10 IST" duration-ms="4516">
+      <class name="files.DynamicJson">
+        <test-method signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:files.DynamicJson@43c1b556]" started-at="2024-11-02T16:25:05 IST" name="addBook" data-provider="BooksData" finished-at="2024-11-02T16:25:09 IST" duration-ms="3924" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[book1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[121212]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PrintAllCourseTitleAndPrices -->
-        <test-method signature="PrintNoOfCopies()[pri:0, instance:SumValidation@11a7ba62]" started-at="2024-11-02T14:51:03 IST" name="PrintNoOfCopies" finished-at="2024-11-02T14:51:03 IST" duration-ms="125" status="PASS">
+        </test-method> <!-- addBook -->
+        <test-method signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:files.DynamicJson@43c1b556]" started-at="2024-11-02T16:25:09 IST" name="addBook" data-provider="BooksData" finished-at="2024-11-02T16:25:10 IST" duration-ms="154" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[book2]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[32323]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PrintNoOfCopies -->
-        <test-method signature="SumOfCourses()[pri:0, instance:SumValidation@11a7ba62]" started-at="2024-11-02T14:51:03 IST" name="SumOfCourses" finished-at="2024-11-02T14:51:03 IST" duration-ms="164" status="PASS">
+        </test-method> <!-- addBook -->
+        <test-method signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:files.DynamicJson@43c1b556]" started-at="2024-11-02T16:25:10 IST" name="addBook" data-provider="BooksData" finished-at="2024-11-02T16:25:10 IST" duration-ms="185" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[book3]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[43435]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SumOfCourses -->
-      </class> <!-- SumValidation -->
+        </test-method> <!-- addBook -->
+        <test-method signature="addBook(java.lang.String,java.lang.String)[pri:0, instance:files.DynamicJson@43c1b556]" started-at="2024-11-02T16:25:10 IST" name="addBook" data-provider="BooksData" finished-at="2024-11-02T16:25:10 IST" duration-ms="162" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[book4]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[767676]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addBook -->
+      </class> <!-- files.DynamicJson -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
