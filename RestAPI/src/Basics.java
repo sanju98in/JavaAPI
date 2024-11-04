@@ -1,16 +1,18 @@
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
+import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.equalTo;
 
-import static io.restassured.RestAssured.*;
-import static org.hamcrest.Matchers.*;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 import org.testng.Assert;
 
 import files.ResusableMethods;
-import files.payload;
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
 public class Basics {
 
-public static void main(String[] args) {
+public static void main(String[] args) throws IOException {
 		
 	//Scenario: Add a Place --> Update the existing Place with new Address --> Get updated place to validate if new address is present or not
 	
@@ -18,19 +20,20 @@ public static void main(String[] args) {
 		//Give - All input details
 		//When - Submit the API - accepts resources and https method
 		//Then - validate the response
-	
+		//Content of the file to String ->  content of file can converted into byte  -> Byte to String
 	
 	//validate if Add Place API is working as expected
 		System.out.println("*************Add Place*****************");
 		RestAssured.baseURI="https://rahulshettyacademy.com/";
 		String response = 
 			given().log().all().queryParam("key", "qaclick123").header("Content-type","application/json")
-				.body(payload.AddPlace())
+				//.body(payload.AddPlace())
+			.body(new String(Files.readAllBytes(Paths.get("C:\\GitProjects\\StudyMaterials\\JavaAPI\\RestAPI\\src\\files\\AddPlace.json"))))
 			.when()
 				.post("maps/api/place/add/json")
 			.then()
-				.assertThat().
-				statusCode(200) // validation, match the status code
+				.assertThat()
+				.statusCode(200) // validation, match the status code
 				.body("scope", equalTo("APP")) // validation, match the body part returned
 				//.then().log().all().assertThat().statusCode(200).body("scope", equalTo("APP"))
 				.header("Server", "Apache/2.4.52 (Ubuntu)") // validate if the header returned is true and matches the server specified

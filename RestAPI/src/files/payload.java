@@ -54,5 +54,16 @@ public class payload {
 				+ "}";
 	
 	}
+	
+	public static String Addbook(String aisle, String isbn) {
+		String payLoad ="{\r\n"
+				+ "    \"name\":\"Learn API Automation with Java\",\r\n"
+				+ "    \"isbn\":\""+isbn+"\",\r\n"
+				+ "    \"aisle\":\""+aisle+"\",\r\n"
+				+ "    \"author\":\"Sanjeev Sinha\"\r\n"
+				+ "}";
+		
+		return payLoad;
+	}
 
 }
