@@ -2,15 +2,19 @@ package SerializationDeserializationWithPOJOClassExample;
 
 import static io.restassured.RestAssured.given;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+
+import org.testng.Assert;
 
 import io.restassured.path.json.JsonPath;
 
 public class DeseralizationUsingPojoClassExample {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		String[] expectedTitles= {"Selenium Webdriver Java","Cypress","Protractor"};
+		
 		String response =
         given() 
         	.formParams("client_id", "692183103107-p0m7ent2hk7suguv4vq22hjcfhcr43pj.apps.googleusercontent.com")
@@ -77,8 +81,7 @@ public class DeseralizationUsingPojoClassExample {
 	    		if(webAutomationData.get(i).getCourseTitle().equalsIgnoreCase("Cypress")) {
 	    			System.out.println(webAutomationData.get(i).getCourseTitle());
 	    			System.out.println(webAutomationData.get(i).getPrice());		
-	    		}
-	    			
+	    		}    			
 	    	}
 	    	
 	    	//print all prices of WebAutomation data
@@ -89,5 +92,15 @@ public class DeseralizationUsingPojoClassExample {
 	    		sum += Integer.parseInt(webAutomationData.get(i).getPrice());
 	    	}
 	    	System.out.println("sum of all webautomation course price is " + sum);
-		}
+	    	
+	    	//array comparisons
+	    	ArrayList<String> newArrList = new ArrayList<String>();
+	    	webAutomationData = getCourseDetails.getCourses().getWebAutomation();
+	    	
+	    	for(int i=0;i<webAutomationData.size();i++) {
+	    		newArrList.add(webAutomationData.get(i).getCourseTitle()); // add all course titles in arraylist
+	    	}
+	    	List<String> expectedArrayList = Arrays.asList(expectedTitles);
+	    	Assert.assertTrue(newArrList.equals(expectedArrayList));
+		}	
 }
